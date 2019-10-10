@@ -162,11 +162,13 @@
     <ClCompile Include="2048.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="RandomPlayer.cpp" />
+    <ClCompile Include="RULUndoPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GamePlayer.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="RandomPlayer.h" />
+    <ClInclude Include="RULUndoPlayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

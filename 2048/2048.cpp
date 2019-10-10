@@ -6,6 +6,7 @@
 #include "GameState.h"
 #include "GamePlayer.h"
 #include "RandomPlayer.h"
+#include "RULUndoPlayer.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ int main() {
 	stack<GameState> gameStack;
 	playing = true;
 	cout << gameState.getStateString() << endl;
-	GamePlayer *player = new RandomPlayer;
+	GamePlayer *player = new RULUndoPlayer;
 	player->setGameState(gameState);
 	while (playing) {
 		string input;
@@ -92,4 +93,6 @@ int main() {
 			}
 		}
 	}
+	delete player;
+	return 0;
 }

@@ -2,10 +2,12 @@
 #include <stack>
 #include "GamePlayer.h"
 
-class RandomPlayer : public GamePlayer {
+class RULUndoPlayer :
+	public GamePlayer
+{
 public:
-	RandomPlayer();
-	~RandomPlayer();
+	RULUndoPlayer();
+	~RULUndoPlayer();
 
 	// Inherited via GamePlayer
 	virtual InputDirection getMoveDirection() override;
