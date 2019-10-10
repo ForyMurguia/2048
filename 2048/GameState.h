@@ -9,7 +9,7 @@ using namespace std;
 const uint8_t BOARD_SIZE = 4;
 
 enum InputDirection {
-	UP, RIGHT, LEFT, DOWN, UNDO, NONE,
+	UP, RIGHT, LEFT, DOWN, NONE, UNDO,
 };
 const string inputNames[6] = { "UP", "RIGHT", "LEFT", "DOWN", "UNDO", "NONE" };
 
@@ -36,6 +36,9 @@ public:
 	uint8_t getTile(int r, int c);
 	int getNumFreeTiles();
 	int64_t getFitness();
+	void addTile(uint8_t position, uint8_t value);
+	int8_t randomTile();
+	int8_t randomTileValue();
 
 private:
 	uint8_t myBoard[BOARD_SIZE][BOARD_SIZE];
@@ -45,9 +48,6 @@ private:
 	bool mergeTiles(InputDirection direction);
 	bool shiftTiles(InputDirection direction);
 	void initialize();
-	void addTile(uint8_t position, uint8_t value);
-	int8_t randomTile();
-	int8_t randomTileValue();
 	int getStepRowR(InputDirection direction);
 	int getStepRowC(InputDirection direction);
 	int getStepColumnR(InputDirection direction);

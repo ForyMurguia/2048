@@ -4,14 +4,9 @@
 class GamePlayer
 {
 public:
-	void setGameState(GameState &currentState) {
-		gameState.copy(currentState);
-	}
-
-	virtual InputDirection getMove() = 0;
-	virtual InputDirection makeMove(InputDirection direction) = 0;
-
-protected:
-	GameState gameState;
+	virtual void setGameState(GameState &currentState) = 0;
+	virtual InputDirection getMoveDirection() = 0;
+	virtual void makeMove(InputDirection direction, int8_t newPosition, int8_t newValue) = 0;
+	virtual void undoMove() = 0;
 };
 

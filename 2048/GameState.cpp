@@ -99,7 +99,7 @@ int64_t GameState::getFitness() {
 		for (int8_t c = 0; c < 4; c++) {
 			int8_t tile = getTile(r, c);
 			if (tile > 0) {
-				result += tilePoints[r][c] * (1 << tile);
+				result += tilePoints[r][c] * (1LL << tile);
 			}
 		}
 	}
