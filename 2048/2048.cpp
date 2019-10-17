@@ -5,8 +5,7 @@
 #include <stack>
 #include "GameState.h"
 #include "GamePlayer.h"
-#include "RandomPlayer.h"
-#include "RULUndoPlayer.h"
+#include "RandomTreePlayer.h"
 
 using namespace std;
 
@@ -14,13 +13,13 @@ volatile bool playing;
 
 int main() {
     cout << "Hello 2048!\n"; 
-	srand((int)time(NULL));
+	srand((int)time(nullptr));
 	GameState gameState, newState;
 	gameState.startNewGame();
 	stack<GameState> gameStack;
 	playing = true;
 	cout << gameState.getStateString() << endl;
-	GamePlayer *player = new RULUndoPlayer;
+	GamePlayer *player = new RandomTreePlayer;
 	player->setGameState(gameState);
 	while (playing) {
 		string input;

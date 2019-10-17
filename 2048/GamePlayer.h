@@ -1,5 +1,6 @@
 #pragma once
 #include "GameState.h"
+#include <stack>
 
 class GamePlayer
 {
@@ -9,7 +10,7 @@ protected:
 public:
 	virtual InputDirection getMoveDirection() = 0;
 
-	void makeMove(InputDirection direction, int8_t newPosition, int8_t newValue) {
+	virtual void makeMove(InputDirection direction, int8_t newPosition, int8_t newValue) {
 		GameState newState;
 		newState.copy(myGameStack.top());
 		if (newState.move(direction)) {
@@ -18,7 +19,7 @@ public:
 		}
 	}
 
-	void undoMove() {
+	virtual void undoMove() {
 		if (!myGameStack.empty()) {
 			myGameStack.pop();
 		}
